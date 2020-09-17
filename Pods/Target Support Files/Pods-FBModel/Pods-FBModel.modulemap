@@ -1,6 +1,0 @@
-framework module Pods_FBModel {
-  umbrella header "Pods-FBModel-umbrella.h"
-
-  export *
-  module * { export * }
-}
