@@ -13,6 +13,9 @@ public protocol FBModel: Codable, Equatable {
     /// JSON string representation of the Model
     var JSON: String { get }
     
+    /// Dictionary representation of the Model
+    var dictionary: [String: AnyObject] { get }
+    
     /// Generates the model from a JSON representation in string.
     /// Returns nil if not possible
     /// - Parameter json: string in json format to parse this model
@@ -41,6 +44,14 @@ public extension FBModel {
     var JSON: String {
         get {
             return String(data: self.jsonData, encoding: .utf8) ?? ""
+        }
+    }
+    
+    var dictionary: [String: AnyObject] {
+        get {
+            guard let data = JSON.data(using: .utf8) else { return [:] }
+            guard let dict = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: AnyObject] else { return [:] }
+            return dict
         }
     }
     

@@ -49,6 +49,15 @@ class FBSpec: QuickSpec {
             print(secondModel.JSON)
             print(differentModel.JSON)
         }
+        
+        it("generates a dictionary from model") {
+            let someModel = Model(text: "algum texto", number: 12, another: Intern(test: 2))
+            
+            expect(someModel.dictionary["text"] as? String).to(equal(someModel.text))
+            expect(someModel.dictionary["number"] as? Int).to(equal(someModel.number))
+            expect(someModel.dictionary["another"] as? [String: AnyObject]).toNot(beNil())
+            expect(someModel.dictionary["another"]?["test"]! as? Double).to(equal(2))
+        }
     }
 }
 
