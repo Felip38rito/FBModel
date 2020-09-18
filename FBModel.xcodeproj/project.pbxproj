@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		30F699A762144EE9C2EF41BE /* Pods_FBModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EBF1D212F356F61EC88FCB7 /* Pods_FBModel.framework */; };
-		61B01A4D062D2EB17C5BAE02 /* Pods_FBModel_FBModelTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D0ABF8F758C56F31D212928 /* Pods_FBModel_FBModelTests.framework */; };
+		65E32270656C268C5D5616CE /* Pods_FBModelTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25C2D07C1171236170D6C01D /* Pods_FBModelTests.framework */; };
 		FA9B78202512DCC000095389 /* FBModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA9B78162512DCC000095389 /* FBModel.framework */; };
 		FA9B78252512DCC000095389 /* FBSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9B78242512DCC000095389 /* FBSpec.swift */; };
 		FA9B78272512DCC000095389 /* FBModel.h in Headers */ = {isa = PBXBuildFile; fileRef = FA9B78192512DCC000095389 /* FBModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -27,11 +27,13 @@
 
 /* Begin PBXFileReference section */
 		0EBF1D212F356F61EC88FCB7 /* Pods_FBModel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FBModel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1D0ABF8F758C56F31D212928 /* Pods_FBModel_FBModelTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FBModel_FBModelTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EFDC0F01206CA305C21D189 /* Pods-FBModel-FBModelTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FBModel-FBModelTests.debug.xcconfig"; path = "Target Support Files/Pods-FBModel-FBModelTests/Pods-FBModel-FBModelTests.debug.xcconfig"; sourceTree = "<group>"; };
+		25C2D07C1171236170D6C01D /* Pods_FBModelTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FBModelTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FE0892C086EB396C8417EF5 /* Pods-FBModel-FBModelTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FBModel-FBModelTests.release.xcconfig"; path = "Target Support Files/Pods-FBModel-FBModelTests/Pods-FBModel-FBModelTests.release.xcconfig"; sourceTree = "<group>"; };
 		7E30702B954973C949AD8686 /* Pods-FBModel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FBModel.debug.xcconfig"; path = "Target Support Files/Pods-FBModel/Pods-FBModel.debug.xcconfig"; sourceTree = "<group>"; };
 		83D54C97A236FF33BB930C5F /* Pods-FBModel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FBModel.release.xcconfig"; path = "Target Support Files/Pods-FBModel/Pods-FBModel.release.xcconfig"; sourceTree = "<group>"; };
+		A87BAB9DAC21157817F9DD68 /* Pods-FBModelTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FBModelTests.release.xcconfig"; path = "Target Support Files/Pods-FBModelTests/Pods-FBModelTests.release.xcconfig"; sourceTree = "<group>"; };
+		F0C59D7DED1370F436B6C930 /* Pods-FBModelTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FBModelTests.debug.xcconfig"; path = "Target Support Files/Pods-FBModelTests/Pods-FBModelTests.debug.xcconfig"; sourceTree = "<group>"; };
 		FA9B78162512DCC000095389 /* FBModel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FBModel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA9B78192512DCC000095389 /* FBModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FBModel.h; sourceTree = "<group>"; };
 		FA9B781A2512DCC000095389 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -55,7 +57,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA9B78202512DCC000095389 /* FBModel.framework in Frameworks */,
-				61B01A4D062D2EB17C5BAE02 /* Pods_FBModel_FBModelTests.framework in Frameworks */,
+				65E32270656C268C5D5616CE /* Pods_FBModelTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,7 +68,7 @@
 			isa = PBXGroup;
 			children = (
 				0EBF1D212F356F61EC88FCB7 /* Pods_FBModel.framework */,
-				1D0ABF8F758C56F31D212928 /* Pods_FBModel_FBModelTests.framework */,
+				25C2D07C1171236170D6C01D /* Pods_FBModelTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -78,6 +80,8 @@
 				83D54C97A236FF33BB930C5F /* Pods-FBModel.release.xcconfig */,
 				1EFDC0F01206CA305C21D189 /* Pods-FBModel-FBModelTests.debug.xcconfig */,
 				5FE0892C086EB396C8417EF5 /* Pods-FBModel-FBModelTests.release.xcconfig */,
+				F0C59D7DED1370F436B6C930 /* Pods-FBModelTests.debug.xcconfig */,
+				A87BAB9DAC21157817F9DD68 /* Pods-FBModelTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -236,15 +240,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-FBModel-FBModelTests/Pods-FBModel-FBModelTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-FBModelTests/Pods-FBModelTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-FBModel-FBModelTests/Pods-FBModel-FBModelTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-FBModelTests/Pods-FBModelTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FBModel-FBModelTests/Pods-FBModel-FBModelTests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FBModelTests/Pods-FBModelTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		89E5362032F1318E86586E63 /* [CP] Check Pods Manifest.lock */ = {
@@ -262,7 +266,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-FBModel-FBModelTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-FBModelTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -372,7 +376,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -429,7 +433,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -498,7 +502,7 @@
 		};
 		FA9B782E2512DCC000095389 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1EFDC0F01206CA305C21D189 /* Pods-FBModel-FBModelTests.debug.xcconfig */;
+			baseConfigurationReference = F0C59D7DED1370F436B6C930 /* Pods-FBModelTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -518,7 +522,7 @@
 		};
 		FA9B782F2512DCC000095389 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5FE0892C086EB396C8417EF5 /* Pods-FBModel-FBModelTests.release.xcconfig */;
+			baseConfigurationReference = A87BAB9DAC21157817F9DD68 /* Pods-FBModelTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
