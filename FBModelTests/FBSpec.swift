@@ -58,6 +58,37 @@ class FBSpec: QuickSpec {
             expect(someModel.dictionary["another"] as? [String: AnyObject]).toNot(beNil())
             expect(someModel.dictionary["another"]?["test"]! as? Double).to(equal(2))
         }
+        
+        it("can decode with FBType") {
+            let json = """
+            {
+                "someInt": "2",
+                "someDouble": "2.0",
+                "someString": "HUE",
+                "someBool": "true"
+            }
+            """
+            let model = StrangeModel.from(json)
+            
+            expect(model).toNot(beNil())
+            expect(model?.someInt.int).to(equal(2))
+            expect(model?.someDouble.double).to(equal(2.0))
+            expect(model?.someString.string).to(equal("HUE"))
+            expect(model?.someBool.bool).to(beTrue())
+            /// Nesse caso queremos que seja nulo mesmo
+            expect(model?.someOptional).to(beNil())
+            /// E tbm consegue transformar os tipos
+            expect(model?.someInt.string).to(equal("2"))
+        }
+        
+        it("can encode with FBType and be compared to a version without FBType") {
+            let strangeModel = StrangeModel(someInt: .int(2), someDouble: .double(1.2), someString: .string("huehue"), someBool: .bool(false), someOptional: nil)
+            let notStrangeModel = NotStrangeModel(someInt: 2, someDouble: 1.2, someString: "huehue", someBool: false, someOptional: nil)
+            /// devem gerar o mesmo json
+            expect(strangeModel.JSON).to(equal(notStrangeModel.JSON))
+            /// os structs com FBType devem ser capazes de gerar jsons validos para structs comuns
+            expect(notStrangeModel).to(equal(NotStrangeModel.from(strangeModel.JSON)))
+        }
     }
 }
 
@@ -69,4 +100,22 @@ fileprivate struct Model: FBModel {
     let text: String
     let number: Int
     let another: Intern
+}
+
+fileprivate struct StrangeModel: FBModel {
+    let someInt: FBType
+    let someDouble: FBType
+    let someString: FBType
+    let someBool: FBType
+    
+    let someOptional: FBType?
+}
+
+fileprivate struct NotStrangeModel: FBModel {
+    let someInt: Int
+    let someDouble: Double
+    let someString: String
+    let someBool: Bool
+    
+    let someOptional: String?
 }

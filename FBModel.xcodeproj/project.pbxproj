@@ -13,6 +13,7 @@
 		FA9B78252512DCC000095389 /* FBSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9B78242512DCC000095389 /* FBSpec.swift */; };
 		FA9B78272512DCC000095389 /* FBModel.h in Headers */ = {isa = PBXBuildFile; fileRef = FA9B78192512DCC000095389 /* FBModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FA9B78312512DDBD00095389 /* FBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9B78302512DDBD00095389 /* FBModel.swift */; };
+		FAAA3F4E25254DA500545ACB /* FBType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAA3F4D25254DA500545ACB /* FBType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +42,7 @@
 		FA9B78242512DCC000095389 /* FBSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBSpec.swift; sourceTree = "<group>"; };
 		FA9B78262512DCC000095389 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA9B78302512DDBD00095389 /* FBModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBModel.swift; sourceTree = "<group>"; };
+		FAAA3F4D25254DA500545ACB /* FBType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				FA9B78192512DCC000095389 /* FBModel.h */,
 				FA9B781A2512DCC000095389 /* Info.plist */,
 				FA9B78302512DDBD00095389 /* FBModel.swift */,
+				FAAA3F4D25254DA500545ACB /* FBType.swift */,
 			);
 			path = FBModel;
 			sourceTree = "<group>";
@@ -302,6 +305,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAAA3F4E25254DA500545ACB /* FBType.swift in Sources */,
 				FA9B78312512DDBD00095389 /* FBModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
