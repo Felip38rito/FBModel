@@ -56,7 +56,7 @@ public enum FBType: Codable {
     }
     
     /// The string representation of this FBType
-    var string: String {
+    public var string: String {
         get {
             switch self {
             case .string(let val):
@@ -71,7 +71,7 @@ public enum FBType: Codable {
         }
     }
     /// The integer representation of this FBType
-    var int: Int? {
+    public var int: Int? {
         get {
             switch self {
             case .string(let val):
@@ -86,7 +86,7 @@ public enum FBType: Codable {
         }
     }
     /// The double representation of this FBType
-    var double: Double? {
+    public var double: Double? {
         get {
             switch self {
             case .string(let val):
@@ -101,7 +101,7 @@ public enum FBType: Codable {
         }
     }
     /// The boolean representation of this FBType
-    var bool: Bool? {
+    public var bool: Bool? {
         get {
             switch self {
             case .string(let val):
