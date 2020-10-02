@@ -12,13 +12,13 @@ import Foundation
 ///
 /// The objective of FBType is to work with api when the same object can be received
 /// as either string, boolean, int or double, case when the default codable will not extract
-enum FBType: Codable {
+public enum FBType: Codable {
     case string(String)
     case bool(Bool)
     case int(Int)
     case double(Double)
     
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         let container = try decoder.singleValueContainer()
         
         if let value = try? container.decode(String.self) {
@@ -40,7 +40,7 @@ enum FBType: Codable {
         throw DecodingError.typeMismatch(FBType.self, DecodingError.Context(codingPath: decoder.codingPath, debugDescription: "Incompatible type for FBType"))
     }
     
-    func encode(to encoder: Encoder) throws {
+    public func encode(to encoder: Encoder) throws {
         var container = encoder.singleValueContainer()
         
         switch self {
