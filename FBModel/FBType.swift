@@ -12,11 +12,26 @@ import Foundation
 ///
 /// The objective of FBType is to work with api when the same object can be received
 /// as either string, boolean, int or double, case when the default codable will not extract
+/// ~~~
+/// // On your struct model declaration:
+/// let myVar: FBType
+/// ~~~
+///
+/// Then, FBType will encode/decode the object if it is a basic type.
+/// You can then use it like:
+/// ~~~
+/// // if you want a string...
+/// myModel.myVar.string
+/// // Or a double:
+/// myModel.myVar.double
+/// ~~~
+/// For now, the types supported are string, bool, int, double and decimal
 public enum FBType: Codable {
     case string(String)
     case bool(Bool)
     case int(Int)
     case double(Double)
+    case decimal(Decimal)
     
     public init(from decoder: Decoder) throws {
         let container = try decoder.singleValueContainer()
@@ -31,6 +46,9 @@ public enum FBType: Codable {
         }
         else if let value = try? container.decode(Int.self) {
             self = .int(value)
+            return
+        } else if let value = try? container.decode(Decimal.self) {
+            self = .decimal(value)
             return
         }
         else if let value = try? container.decode(Double.self) {
@@ -52,6 +70,8 @@ public enum FBType: Codable {
             try container.encode(double)
         case .int(let int):
             try container.encode(int)
+        case .decimal(let decimal):
+            try container.encode(decimal)
         }
     }
     
@@ -62,11 +82,13 @@ public enum FBType: Codable {
             case .string(let val):
                 return val
             case .int(let val):
-                return String(val)
+                return "\(val)"
             case .double(let val):
-                return String(val)
+                return "\(val)"
+            case .decimal(let val):
+                return "\(val)"
             case .bool(let val):
-                return String(val)
+                return "\(val)"
             }
         }
     }
@@ -82,6 +104,8 @@ public enum FBType: Codable {
                 return Int(val)
             case .bool(let val):
                 return val ? 1 : 0
+            case .decimal(let val):
+                return Int("\(val)")
             }
         }
     }
@@ -93,6 +117,8 @@ public enum FBType: Codable {
                 return Double(val)
             case .int(let val):
                 return Double(val)
+            case .decimal(let val):
+                return Double("\(val)")
             case .double(let val):
                 return val
             case .bool(let val):
@@ -100,6 +126,25 @@ public enum FBType: Codable {
             }
         }
     }
+    
+    /// The decimal representation of this FBType
+    public var decimal: Decimal? {
+        get {
+            switch self {
+            case .string(let val):
+                return Decimal(string: val)
+            case .int(let val):
+                return Decimal(val)
+            case .double(let val):
+                return Decimal(val)
+            case .bool(let val):
+                return val ? 1.0 : 0.0
+            case .decimal(let val):
+                return val
+            }
+        }
+    }
+    
     /// The boolean representation of this FBType
     public var bool: Bool? {
         get {
@@ -107,6 +152,8 @@ public enum FBType: Codable {
             case .string(let val):
                 return Bool(val)
             case .int(let val):
+                return Bool(truncating: val as NSNumber)
+            case .decimal(let val):
                 return Bool(truncating: val as NSNumber)
             case .double(let val):
                 return Bool(truncating: val as NSNumber)
