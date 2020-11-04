@@ -89,6 +89,37 @@ class FBSpec: QuickSpec {
             /// os structs com FBType devem ser capazes de gerar jsons validos para structs comuns
             expect(notStrangeModel).to(equal(NotStrangeModel.from(strangeModel.JSON)))
         }
+        
+        it("can encode and decode lists of fbtype models") {
+            let one = StrangeModel(someInt: .int(2), someDouble: .double(2), someString: .string("hey"), someBool: .bool(true), someOptional: .some(.string("xuxa")))
+            let another = StrangeModel(someInt: .int(3), someDouble: .double(3), someString: .string("how"), someBool: .bool(false), someOptional: .some(.string("pele")))
+            
+            let oneJSON = one.JSON
+            let anotherJSON = another.JSON
+            
+            let result = [StrangeModel].from(
+            """
+                    [\(oneJSON),\(anotherJSON)]
+            """)
+            
+            expect(result).to(equal([one, another]))
+            expect([one, another].JSON).to(equal("[\(oneJSON),\(anotherJSON)]"))
+        }
+        
+        it("can encode and decode lists of models") {
+            let oneModel = Model(text: "Um texto", number: 2, another: .init(test: 2.5))
+            let anotherModel = Model(text: "Outro texto", number: 4, another: .init(test: 3.5))
+            
+            let expected_list = """
+            [{"text": "Um texto", "number": 2, "another": { "test": 2.5 }}, {"text": "Outro texto", "number": 4, "another": { "test": 3.5 }}]
+            """
+            print(expected_list)
+            
+            expect( [Model].from(expected_list)?.first ).to(equal(oneModel))
+            expect( [Model].from(expected_list)?.last ).to(equal(anotherModel))
+            
+            expect( [oneModel, anotherModel].JSON ).to(equal([Model].from(expected_list)?.JSON))
+        }
     }
 }
 

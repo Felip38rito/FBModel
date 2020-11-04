@@ -79,3 +79,45 @@ public extension FBModel {
     }
 }
 
+// Implementing decode and encode of lists
+public extension Array where Element: FBModel {
+    /// Generate the array model from a JSON representation in String
+    /// - Parameter json: json representation of model in string format
+    /// - Returns: A list of the encoded elements in json or nil if not possible
+    static func from(_ json: String) -> [Element]? {
+        guard let data = json.data(using: .utf8) else { return nil }
+        return from(data)
+    }
+    
+    /// Generates the model from a JSON representation in Data
+    /// - Parameter data: json representation of model in data format
+    /// - Returns: a list of the encoded elements in json or nil if not possible
+    static func from(_ data: Data) -> [Element]? {
+        let decoder = JSONDecoder()
+        do {
+            return try decoder.decode(self, from: data)
+        } catch {
+            print("Parser error on FBModel ::: \(self) ::: ", error.localizedDescription)
+            return nil
+        }
+    }
+    
+    /// JSON data representation of the Model list
+    fileprivate var jsonData: Data {
+        get {
+            let encoder = JSONEncoder()
+            
+            do {
+                return try encoder.encode(self)
+            } catch {
+                print(error)
+                return Data()
+            }
+        }
+    }
+    
+    /// JSON string representation of the Model list
+    var JSON: String {
+        return String(data: self.jsonData, encoding: .utf8) ?? ""
+    }
+}
