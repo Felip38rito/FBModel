@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = "FBModel"
-  spec.version      = "0.0.8"
+  spec.version      = "0.0.10"
   spec.summary      = "A simple utility for the model layer in MVC and MVVM patterns"
 
   spec.description  = "Just a simple utility for the model layer based on Codable, to translate models to json and from json with ease"
