@@ -8,7 +8,7 @@ Pod::Spec.new do |spec|
   spec.homepage     = "https://github.com/Felip38rito/FBModel"
   spec.license      = "MIT"
   spec.author             = { "Felipe Correia Brito" => "felipe.correia.wd@gmail.com" }
-  spec.platform     = :ios, "12.0"
+  spec.platform     = :ios, "9.0"
   spec.source       = { :git => "https://github.com/Felip38rito/FBModel.git", :tag => "#{spec.version}" }
   spec.source_files  = "FBModel", "FBModel/**/*.{h,m}"
   spec.exclude_files = "Classes/Exclude"
